@@ -1,7 +1,11 @@
 import pygame, sys
 from pygame.locals import *
 
+from Game.Core.GameMaster import GameMaster
+
+
 def engine_start():
+    game_master = GameMaster()
     # main
     pygame.init()
     # 設定視窗大小，可以改變參數設定成喜歡的大小。
