@@ -14,6 +14,8 @@ class Car:
         return self.__position
     def get_velocity(self):
         return self.__velocity
+    def get_steer_angle(self):
+        return self.__steer_angle
     def update_frame(self):
         move_offset = self._get_move_offset()
         self.__position += move_offset

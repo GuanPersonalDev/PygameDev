@@ -14,6 +14,8 @@ class CarTest(unittest.TestCase):
     def test_car_update(self):
         car = Car()
         self.assertEqual(True, car.get_position().x == 0)
+        car.set_steer_angle(10)
+        self.assertEqual(True, car.get_steer_angle() == 10)
         car.update_frame()
         self.assertEqual(True, car.get_position().x == 1)
 
