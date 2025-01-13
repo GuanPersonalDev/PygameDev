@@ -9,6 +9,15 @@ class Vector2:
         self.y = y
     def __add__(self, other):
         return Vector2(self.x + other.x, self.y + other.y)
+    def __sub__(self, other):
+        return Vector2(self.x - other.x, self.y - other.y)
+    def __mul__(self, other):
+        return Vector2(self.x * other, self.y * other)
+
+    def __truediv__(self, other):
+        if other == math.inf:
+           return Vector2(math.inf, math.inf)
+        return Vector2(self.x / other, self.y / other)
 
     @staticmethod
     def right():
@@ -18,6 +27,11 @@ class Vector2:
     def up():
         return Vector2(0, 1)
 
+    def normalize(self):
+        return self / self.length()
+
+    def length(self):
+        return math.sqrt(self.x * self.x + self.y * self.y)
     def rotate(self, angle):
         rad = angle_to_rad(angle)
         new_x = math.cos(rad) * self.x - math.sin(rad) * self.y
